@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ArticleListViewController.swift
 //  NewsArticleApp
 //
 //  Created by Mohammad Mohsin on 10/11/24.
