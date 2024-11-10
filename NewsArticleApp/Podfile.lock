@@ -19,14 +19,14 @@ PODS:
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5)
-  - Kingfisher (~> 7.8.0)
-  - Moya/RxSwift (~> 15.0.0)
+  - Alamofire
+  - Kingfisher
+  - Moya/RxSwift
   - NVActivityIndicatorView
-  - Reusable (~> 4.1)
-  - RxSwift (~> 6.0)
-  - SwiftyBeaver (~> 1.8.4)
-  - SwiftyJSON (~> 4.0)
+  - Reusable
+  - RxSwift
+  - SwiftyBeaver
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -49,6 +49,6 @@ SPEC CHECKSUMS:
   SwiftyBeaver: f9a9aba96a6a6166e21682377804d728b0d20b95
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: ebcc8f86691308e3b73b10c02505092d1e49e1de
+PODFILE CHECKSUM: 040dc346307a7f394ea6cf31347298a1bfa47bb8
 
 COCOAPODS: 1.16.2
