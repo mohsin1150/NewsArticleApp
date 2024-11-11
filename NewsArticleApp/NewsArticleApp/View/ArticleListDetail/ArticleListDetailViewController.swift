@@ -45,7 +45,7 @@ extension ArticleListDetailViewController {
 
         textView.textColor = UIColor(hex: "#8C8E98")
         textView.font = UIFont(name: "Roboto-Regular", size: 14)
-        textView.text = articleData?.content ?? ""
+        textView.text = "\(articleData?.description ?? "") \(articleData?.content ?? "")"
 
         headerTitleLabel.textColor = UIColor(hex: "#FFFFFF")
         headerTitleLabel.font = UIFont(name: "Roboto-Regular", size: 16)

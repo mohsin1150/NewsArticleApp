@@ -17,6 +17,8 @@ class ArticleListViewController: UIViewController {
     @IBOutlet weak var articleListTableView: UITableView!
 
     private let viewModel: ArticleListViewModel = ArticleListViewModel()
+    private var refreshControl: UIRefreshControl!
+    private var isFirst: Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,15 @@ extension ArticleListViewController {
         titleLabel.font = UIFont(name: "Roboto-Bold", size: 30)
         titleLabel.text = "Articles"
         searchIconView.image = UIImage(named: "searchIcon")
+
+        refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "")
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
+        articleListTableView.addSubview(refreshControl)
+    }
+
+    @objc func refresh(sender _: AnyObject) {
+        viewModel.getArticleList()
     }
 
     private func setUpTableView() {
@@ -53,6 +64,16 @@ extension ArticleListViewController {
 
         self.viewModel.showLoader.bind { show in
             show ? ProgressHUD.progress("Loading...", 1.0) : ProgressHUD.succeed()
+            self.refreshControl.endRefreshing()
+            if !(self.isConnectedToInternet()) {
+                Alert().showWarningAlert(
+                    withTitle: "Network Disabled",
+                    withMessage: "Please check your internet",
+                    inView: self,
+                    time: 4.0) {
+                        self.refreshControl.endRefreshing()
+                    }
+            }
         }
 
         self.viewModel.articlesList.bind { [weak self] _ in

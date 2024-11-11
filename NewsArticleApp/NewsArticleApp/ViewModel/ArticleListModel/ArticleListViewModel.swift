@@ -14,7 +14,7 @@ class ArticleListViewModel {
 
     func getArticleList() {
         self.showLoader.value = true
-        AF.request("https://mocki.io/v1/e91eafa6-46f7-4bd1-87f7-2770c7b7e194", method: .get).response { response in
+        AF.request(Server.articleApi, method: .get).response { response in
             switch(response.result) {
             case .success(let data):
                 do {
