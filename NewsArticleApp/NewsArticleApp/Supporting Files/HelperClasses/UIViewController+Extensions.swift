@@ -7,18 +7,8 @@
 
 import UIKit
 import Kingfisher
-import NVActivityIndicatorView
 
 extension UIViewController {
-    func showLoader(indicatorColor: UIColor = .gray) {
-        let window = LNIndicatorManager.shared.getWindow() ?? self.view
-        LNIndicatorManager.shared.showIndicator(indicatorColor: indicatorColor,
-                                                onView: window ?? self.view)
-    }
-
-    func hideLoader() {
-        LNIndicatorManager.shared.hideIndicator()
-    }
 
     func downloadImage(with urlString : String , imageCompletionHandler: @escaping (UIImage?) -> Void) {
         guard let url = URL.init(string: urlString) else {

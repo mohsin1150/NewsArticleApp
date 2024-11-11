@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RxSwift
+import ProgressHUD
 
 class ArticleListViewController: UIViewController {
 
@@ -51,8 +51,8 @@ extension ArticleListViewController {
 
     private func addBindsToViewModel() {
 
-        self.viewModel.showLoader.bind { [weak self] show in
-            show ? self?.showLoader() : self?.hideLoader()
+        self.viewModel.showLoader.bind { show in
+            show ? ProgressHUD.progress("Loading...", 1.0) : ProgressHUD.succeed()
         }
 
         self.viewModel.articlesList.bind { [weak self] _ in
@@ -86,6 +86,11 @@ extension ArticleListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Selected Data: \(viewModel.articlesList.value?[indexPath.row].urlToImage ?? "")")
+        let articleDetailController = self.storyboard?.instantiateViewController(
+            withIdentifier: "articleListDetailViewController"
+        ) as! ArticleListDetailViewController
+        articleDetailController.articleData = viewModel.articlesList.value?[indexPath.row]
+        articleDetailController.modalPresentationStyle = .fullScreen
+        self.present(articleDetailController, animated: true, completion: nil)
     }
 }

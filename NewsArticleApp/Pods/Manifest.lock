@@ -1,64 +1,36 @@
 PODS:
   - Alamofire (5.9.1)
   - Kingfisher (7.8.1)
-  - Moya/Core (15.0.0):
-    - Alamofire (~> 5.0)
-  - Moya/RxSwift (15.0.0):
-    - Moya/Core
-    - RxSwift (~> 6.0)
-  - NVActivityIndicatorView (5.2.0):
-    - NVActivityIndicatorView/Base (= 5.2.0)
-  - NVActivityIndicatorView/Base (5.2.0)
+  - ProgressHUD (14.1.1)
   - Reusable (4.1.2):
     - Reusable/Storyboard (= 4.1.2)
     - Reusable/View (= 4.1.2)
   - Reusable/Storyboard (4.1.2)
   - Reusable/View (4.1.2)
-  - RxCocoa (6.7.1):
-    - RxRelay (= 6.7.1)
-    - RxSwift (= 6.7.1)
-  - RxRelay (6.7.1):
-    - RxSwift (= 6.7.1)
-  - RxSwift (6.7.1)
   - SwiftyBeaver (1.8.4)
-  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
-  - Moya/RxSwift
-  - NVActivityIndicatorView
+  - ProgressHUD
   - Reusable
-  - RxCocoa
-  - RxSwift
   - SwiftyBeaver
-  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
-    - Moya
-    - NVActivityIndicatorView
+    - ProgressHUD
     - Reusable
-    - RxCocoa
-    - RxRelay
-    - RxSwift
     - SwiftyBeaver
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
   Kingfisher: 63f677311d36a3473f6b978584f8a3845d023dc5
-  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
-  NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
+  ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
-  RxCocoa: f5609cb4637587a7faa99c5d5787e3ad582b75a4
-  RxRelay: 4151ba01152436b08271e08410135e099880eae5
-  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
   SwiftyBeaver: f9a9aba96a6a6166e21682377804d728b0d20b95
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 75b7ea7d64ec0522c12881505e32b76081d8c193
+PODFILE CHECKSUM: 241900b7c8b531b246f153c54118d4a03db99fe0
 
 COCOAPODS: 1.16.2

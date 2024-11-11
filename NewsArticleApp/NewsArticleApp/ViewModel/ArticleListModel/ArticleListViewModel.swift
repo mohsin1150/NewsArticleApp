@@ -21,20 +21,21 @@ class ArticleListViewModel {
                     if let postData = data {
                         let decodedData = try JSONDecoder().decode(ArticleResponseData.self, from: postData)
                         DispatchQueue.main.async {
+                            log.verbose(decodedData.articles ?? "")
                             self.showLoader.value = false
                             self.articlesList.value = decodedData.articles ?? []
                         }
                     } else {
                         self.showLoader.value = false
-                        print("Data is Empty")
+                        log.verbose("Data is Empty")
                     }
                 } catch {
                     self.showLoader.value = false
-                    print("Error getting Data")
+                    log.verbose("Error getting Data")
                 }
             case .failure(let error):
                 self.showLoader.value = false
-                print("Error getting Data: \(error)")
+                log.verbose("Error getting Data: \(error)")
                 
             }
         }

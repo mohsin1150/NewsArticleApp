@@ -6,13 +6,9 @@ target 'NewsArticleApp' do
   use_frameworks!
 
   # Pods for NewsArticleApp
-  pod 'Moya/RxSwift'
   pod 'Reusable'
   pod 'Kingfisher'
-  pod 'RxSwift'
-  pod 'RxCocoa'
   pod 'Alamofire'
-  pod 'NVActivityIndicatorView'
+  pod 'ProgressHUD'
   pod 'SwiftyBeaver'
-  pod 'SwiftyJSON'
 end
