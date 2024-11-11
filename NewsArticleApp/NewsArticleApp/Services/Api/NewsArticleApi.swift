@@ -9,17 +9,12 @@ import UIKit
 import Alamofire
 import Moya
 
-class LocoNavApi {
+class NewsArticleApi {
 
-    static let usersService = MoyaProvider<UsersService>(
+    static let alertService = MoyaProvider<AlertService>(
         session: DefaultAlamofireManager.sharedManager,
         plugins: MoyaHelper.shared.getPlugins()
     )
-
-    static func getHeaders() -> [String: String] {
-        var headers = ["": ""]
-        return headers
-    }
 }
 
 class DefaultAlamofireManager: Alamofire.Session {

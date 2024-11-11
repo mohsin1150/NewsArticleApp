@@ -10,6 +10,7 @@ target 'NewsArticleApp' do
   pod 'Reusable'
   pod 'Kingfisher'
   pod 'RxSwift'
+  pod 'RxCocoa'
   pod 'Alamofire'
   pod 'NVActivityIndicatorView'
   pod 'SwiftyBeaver'

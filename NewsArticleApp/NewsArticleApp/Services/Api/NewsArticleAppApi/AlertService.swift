@@ -1,5 +1,5 @@
 //
-//  ArticleApi.swift
+//  AlertService.swift
 //  NewsArticleApp
 //
 //  Created by Mohammad Mohsin on 10/11/24.
@@ -13,6 +13,7 @@ enum AlertService {
 }
 
 extension AlertService: TargetType {
+    
     var baseURL: URL {
         return URL(string: "https://mocki.io/")!
     }
@@ -27,8 +28,6 @@ extension AlertService: TargetType {
     var method: Moya.Method {
         switch self {
         case .getAlertList:
-            return .get
-        default:
             return .get
         }
     }
@@ -46,7 +45,7 @@ extension AlertService: TargetType {
     }
 
     var headers: [String: String]? {
-        return LocoNavApi.getHeaders()
+        return ["": ""]
     }
 }
 
